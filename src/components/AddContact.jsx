@@ -9,7 +9,7 @@ class AddContact extends React.Component {
   add = (e) => {
     e.preventDefault();
 
-    if (this.state.name === "" && this.state.email === "") {
+    if (this.state.name === "" || this.state.email === "") {
       alert("Los datos son obligatorios");
       return;
     }
@@ -34,7 +34,7 @@ class AddContact extends React.Component {
             />
           </div>
           <div className="field">
-            <label>Last Name</label>
+            <label>Email</label>
             <input
               type="text"
               name="email"
@@ -43,7 +43,7 @@ class AddContact extends React.Component {
               onChange={(e) => this.setState({ email: e.target.value })}
             />
           </div>
-          <button class="ui button blue">Add</button>
+          <button className="ui button blue">Add</button>
         </form>
       </div>
     );
